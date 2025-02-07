@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f8f8f8;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  header {
+    background-color: #ff5722;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin: 0 1rem;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #050505; 
+    transform: scale(1.1); 
+  }
+
+  main {
+    padding: 2rem;
+    min-height: 100vh;
+  }
+  
+  .login-popup {
+    background-color: #fff;
+    padding: 20px;
+    margin: 120px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 40%;
+    text-align: center;
+  }
+  
+  
+  .login-popup h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Input Fields */
+  .login-popup input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Button */
+  .login-popup button {
+    width: 60%;
+    padding: 10px;
+    background-color: #ff8800;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .login-popup button:hover {
+    background-color: #e2491a;
+  }
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+  }
+  
+  footer a {
+    color: #ff5722;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  footer a:hover {
+    color: #ffd54f;
+    text-decoration: underline;
+  }

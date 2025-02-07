@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f8f8f8;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  header {
+    background-color: #ff5722;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin: 0 1rem;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #050505; /* Darker shade for contrast */
+    transform: scale(1.1); /* Slightly larger scaling for emphasis */
+  }
+  
+  main {
+    padding: 2rem;
+    min-height: 100vh;
+  }
+
+  .menu {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .menu h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    position: relative;
+  }
+  .menu h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #ff5722;
+    margin: 0.5rem auto;
+  }
+  .card {
+    display: inline-block;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 8px;
+    width: 300px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+  }
+  
+  .card img:hover {
+    transform: scale(1.05);
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  button:hover {
+    background-color: #388e3c;
+    transform: scale(1.1);
+  }
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+  }
+  
+  footer a {
+    color: #ff5722;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  footer a:hover {
+    color: #ffd54f;
+    text-decoration: underline;
+  }

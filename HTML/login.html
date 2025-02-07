@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/CSS/login.css" />
+</head>
+
+<body>
+    <header>
+        <div class="logo">Foodie Express</div>
+        <nav>
+            <ul>
+                <li><a href="/HTML/index.html">Home</a></li>
+                <li><a href="/HTML/index.html#services">Services</a></li>
+                <li><a href="/HTML/catalogue.html">Menu</a></li>
+                <li><a href="/HTML/contact.html">Contact</a></li>
+                <li>
+                    <a href="/HTML/cart.html"><img src="/Images/cart.png" height="20px" alt="Cart" /></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="login-popup" id="loginPopup">
+            <h2>Login</h2>
+            <form>
+                <input type="text" id="username"  placeholder="Username" required />               
+                <input type="password" id="password" placeholder="Password" required />
+                
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </main>
+    <footer id="contact">
+        <p>
+            &copy; 2025 Foodie Express. All rights reserved. |
+            <a href="#">Privacy Policy</a>
+        </p>
+    </footer>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent form submission
+            alert("Login successfully");
+            window.location.href = "index.html"; // Redirect to index.html
+        }
+        document.querySelector("form").addEventListener("submit", handleLogin);
+    </script>
+    
+</body>
+
+</html>

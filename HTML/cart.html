@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Express - Cart</title>
+    <link rel="stylesheet" href="/CSS/cart.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">Foodie Express</div>
+        <nav>
+            <ul>
+                <li><a href="/HTML/index.html">Home</a></li>
+                <li><a href="/HTML/index.html#services">Services</a></li>
+                <li><a href="/HTML/catalogue.html">Menu</a></li>
+                <li><a href="/HTML/contact.html">Contact</a></li>
+                <li><a href="/HTML/login.html" onclick="openLoginPopup()">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cart">
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <h3>Order Summary</h3>
+                <p>Total: Rs. <span id="cart-total">0</span></p>
+                <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Foodie Express. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        // Function to load and display cart items from localStorage
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsDiv = document.getElementById('cart-items');
+            const cartTotalSpan = document.getElementById('cart-total');
+
+            // Clear any existing content
+            cartItemsDiv.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
+                cartTotalSpan.textContent = '0';
+                return;
+            }
+
+            let total = 0;
+
+            // Render each cart item
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item';
+                itemDiv.innerHTML = `
+                <span>${item.name}</span>
+                <span>Rs. ${item.price}</span>
+                <button onclick="removeFromCart('${item.name}')">Remove</button>
+            `;
+                cartItemsDiv.appendChild(itemDiv);
+                total += item.price;
+            });
+
+            // Update the total price
+            cartTotalSpan.textContent = total;
+        }
+
+        // Function to remove an item from the cart
+        function removeFromCart(itemName) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(item => item.name !== itemName); // Remove selected item
+            localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart
+            loadCart(); // Reload the cart display
+        }
+
+        // Function to proceed to checkout
+        function proceedToCheckout() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) {
+                alert("Your cart is empty. Add items to proceed.");
+                return;
+            }
+
+            // Clear the cart from localStorage
+            localStorage.removeItem('cart');
+
+            // Reload the cart display to reflect the empty cart
+            loadCart();
+
+            // Notify the user
+            alert("Thank you for your order! Your food is arriving soon.");
+        }
+
+        // Load cart items when the page loads
+        window.onload = loadCart;
+    </script>
+</body>
+
+</html>

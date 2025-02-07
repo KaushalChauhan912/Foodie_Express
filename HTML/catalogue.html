@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery Catalogue</title>
+    <link rel="stylesheet" href="/CSS/catalogue.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Foodie Express</div>
+        <nav>
+            <ul>
+                <li><a href="/HTML/index.html">Home</a></li>
+                <li><a href="/HTML/index.html#services">Services</a></li>
+                <li><a href="/HTML/contact.html">Contact</a></li>
+                <li>
+                    <a href="/HTML/cart.html"><img src="/Images/cart.png" height="20px" alt="Cart" /></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    
+        <section class="menu" id="menu">
+            <h2>Our Menu</h2>
+            <div class="card">
+                <img src="/Images/pizza.png" alt="Pizza">
+                <h3>Pizza</h3>
+                <p>Starting at Rs.249</p>
+                <button onclick="addToCart('Pizza')">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="/Images/burger.png" alt="Burgers">
+                <h3>Burgers</h3>
+                <p>Starting at Rs.49</p>
+                <button onclick="addToCart('Burgers')">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="/Images/sushi.png" alt="Sushi">
+                <h3>Sushi</h3>
+                <p>Starting at Rs.99</p>
+                <button onclick="addToCart('Sushi')">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="/Images/Samosa.png" alt="Samosa">
+                <h3>Samosa</h3>
+                <p>Starting at Rs.39</p>
+                <button onclick="addToCart('Samosa')">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="/Images/Momos.png" alt="Momos">
+                <h3>Momos</h3>
+                <p>Starting at Rs.79</p>
+                <button onclick="addToCart('Momos')">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="/Images/noodles.png" alt="Noodles">
+                <h3>Noodles</h3>
+                <p>Starting at Rs.89</p>
+                <button onclick="addToCart('Noodles')">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="/Images/fries.png" alt="French Fries">
+                <h3>French Fries</h3>
+                <p>Starting at Rs.95</p>
+                <button onclick="addToCart('Fries')">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="/Images/nachos.png" alt="Nachos">
+                <h3>Nachos</h3>
+                <p>Starting at Rs.150</p>
+                <button onclick="addToCart('Nachos')">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="/Images/biryani.png" alt="Biryani">
+                <h3>Biryani</h3>
+                <p>Starting at Rs.170</p>
+                <button onclick="addToCart('Biryani')">Add to Cart</button> 
+            </div>
+            <div class="card">
+                <img src="/Images/chhole.png" alt="Chhole Bhature">
+                <h3>Chhole Bhature</h3>
+                <p>Starting at Rs.150</p>
+                <button onclick="addToCart('Chhole Bhature')">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="/Images/pav.png" alt="Pav Bhaji">
+                <h3>Pav Bhaji</h3>
+                <p>Starting at Rs.90</p>
+                <button onclick="addToCart('Pav Bhaji')">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="/Images/manchuriyan.png" alt="Manchurian">
+                <h3>Manchuriyan</h3>
+                <p>Starting at Rs.150</p>
+                <button onclick="addToCart('Manchurian')">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="/Images/spring.png" alt="Spring Rolls">
+                <h3>Spring Rolls</h3>
+                <p>Starting at Rs.120</p>
+                <button onclick="addToCart('Spring Rolls')">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="/Images/gulab.png" alt="Gulab Jamun">
+                <h3>Gulab Jamun (Two Pieces)</h3>
+                <p>Starting at Rs.60</p>
+                <button onclick="addToCart('Gulab Jamun')">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="/Images/pasta.png" alt="Pasta">
+                <h3>Pasta</h3>
+                <p>Starting at Rs.80</p>
+                <button onclick="addToCart('Pasta')">Add to Cart</button>
+            </div>
+        </section>
+        
+    
+    
+    </main>
+    <footer id="contact">
+        <p>&copy; 2025 Foodie Express. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+    <script>
+        function addToCart(item) {
+            alert(item + " has been added to your cart!");
+            // You can extend this function to update a cart display or save the item in a database/session.
+        }
+        function addToCart(itemName) {
+    const prices = {
+        Pizza: 249,
+        Burgers: 49,
+        Sushi: 99,
+        Samosa: 39,
+        Momos: 79,
+        Noodles: 89,
+        Fries: 95,
+        Nachos: 150,
+        Biryani: 170,
+        "Chhole Bhature": 150,
+        "Pav Bhaji": 90,
+        Manchurian: 150,
+        "Spring Rolls": 120,
+        "Gulab Jamun": 60,
+        Pasta: 80
+
+    };
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name: itemName, price: prices[itemName] });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(itemName + " has been added to your cart!");
+}
+
+    </script>
+
+</body>
+</html>

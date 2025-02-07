@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Food Delivery</title>
+    <link rel="stylesheet" href="/CSS/contact.css">
+ 
+</head>
+
+<body>
+    <header>
+        <div class="logo">Foodie Express</div>
+        <nav>
+            <ul>
+                <li><a href="/HTML/index.html">Home</a></li>
+                <li><a href="/HTML/index.html#services">Services</a></li>
+                <li><a href="/HTML/catalogue.html">Menu</a></li>
+                <li><a href="/HTML/cart.html"><img src="/Images/cart.png" height="20px" alt="Cart"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="contact-container">
+            <h1>Contact Us</h1>
+            <p>Have questions or feedback? We'd love to hear from you!</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    <footer id="contact">
+        <p>&copy; 2025 Foodie Express. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting
+            alert('Your request has been submitted!');
+            // Optionally, you can reset the form after submission
+            document.getElementById('contact-form').reset();
+        });
+
+    </script>
+</body>
+
+</html>
